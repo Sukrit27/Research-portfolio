@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sukrit Ghosh — Neural Interfaces &amp; Physiological Signal Decoding</title>
+  <meta name="description" content="Sukrit Ghosh — researcher working on EEG and sEMG decoding, domain adaptation and neural-machine interfaces. IIT Patna graduate, Associate Data Engineer at Tredence." />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="progress" id="progress"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="Back to top">SG<span>.</span></a>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#interests">Interests</a>
+      <a href="#publications">Publications</a>
+      <a href="#pipeline">In progress</a>
+      <a href="#experience">Experience</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <a href="#contact" class="nav__cta" data-magnetic>Contact</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <canvas class="hero__canvas" id="signal" aria-hidden="true"></canvas>
+      <span class="shape shape--1" aria-hidden="true"></span>
+      <span class="shape shape--2" aria-hidden="true"></span>
+      <span class="shape shape--3" aria-hidden="true"></span>
+
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="hero__tag" data-reveal>
+            <span class="pulse"></span> Open to research conversations
+          </p>
+          <p class="hero__hi" data-reveal style="--d:.1s">Hi, I'm</p>
+          <h1 class="hero__title" data-split>Sukrit Ghosh</h1>
+          <p class="hero__lead" data-reveal style="--d:.35s">
+            I teach machines to read
+            <span class="rotator" id="rotator" aria-live="polite">brain signals</span>.
+          </p>
+          <p class="hero__sub" data-reveal style="--d:.45s">
+            Want to discuss research? Let's catch up. When I'm not decoding biosignals or designing algorithms,
+            I'm usually sketching in charcoal or lost in a book.
+          </p>
+          <div class="hero__actions" data-reveal style="--d:.55s">
+            <a class="btn btn--dark" href="#contact" data-magnetic>Let's catch up <span class="arrow">→</span></a>
+            <a class="btn btn--ghost" href="#publications" data-magnetic>See my research <span class="arrow">↓</span></a>
+          </div>
+          <div class="hero__socials" data-reveal style="--d:.65s">
+            <a href="https://www.linkedin.com/in/sukrit-ghosh273/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://github.com/Sukrit27" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=smggltIAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
+          </div>
+        </div>
+
+        <div class="hero__photo" data-reveal="right" style="--d:.25s">
+          <div class="photo" id="heroPhoto">
+            <span class="photo__block" aria-hidden="true"></span>
+            <span class="photo__ring" aria-hidden="true"></span>
+            <img src="assets/sukrit.jpg" alt="Portrait of Sukrit Ghosh" width="659" height="984" />
+            <!-- <span class="float float--1">✎ Sketching</span>
+            <span class="float float--2">Reading</span>
+            <span class="float float--3"><i></i> EEG · sEMG</span> -->
+          </div>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#about" aria-label="Scroll to About"><span></span>Scroll</a>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="section__head">
+        <span class="section__no" data-reveal>01 / About</span>
+        <h2 class="section__title" data-split>From mechanics to minds.</h2>
+      </div>
+
+      <div class="about">
+        <div class="about__text">
+          <p class="lead" data-reveal>
+            I'm a Mechanical Engineering graduate from <strong>IIT Patna</strong> who drifted — deliberately — from
+            fluid dynamics and mechatronics into the signals the body itself produces.
+          </p>
+          <p data-reveal>
+            At the Smart Healthcare &amp; Robotics Interfacing Laboratory I work on decoding EEG and surface EMG:
+            training models that generalize to people they have never seen, need little calibration, and know when
+            their own predictions have stopped being trustworthy. The goal is non-invasive interfaces — for BCIs
+            and myoelectric prostheses — that hold up outside the lab.
+          </p>
+          <p data-reveal>
+            By day I'm an <strong>Associate Data Engineer at Tredence</strong>, building supervisor-agent systems and the data pipelines that power them
+            on Databricks. Off the clock I draw: I led the Fine Arts Club at IIT Patna and hold Inter-IIT medals
+            in charcoal painting and costume design.
+          </p>
+          <div class="about__links" data-reveal>
+            <a href="https://www.linkedin.com/in/sukrit-ghosh273/" target="_blank" rel="noopener" class="chip-link">LinkedIn ↗</a>
+            <a href="https://github.com/Sukrit27" target="_blank" rel="noopener" class="chip-link">GitHub ↗</a>
+            <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=smggltIAAAAJ" target="_blank" rel="noopener" class="chip-link">Google Scholar ↗</a>
+            <a href="mailto:sukritghosh03@gmail.com" class="chip-link">Email ↗</a>
+          </div>
+        </div>
+
+        <aside class="about__card" data-reveal="right" data-tilt>
+          <span class="card__label">Education</span>
+          <ul class="edu">
+            <li>
+              <span class="edu__year">2022 — 2026</span>
+              <strong>Indian Institute of Technology Patna</strong>
+              <span>B.Tech., Mechanical Engineering · CGPA 7.46/10</span>
+            </li>
+            <li>
+              <span class="edu__year">2021</span>
+              <strong>Hariyana Vidya Mandir, Kolkata</strong>
+              <span>AISSCE (CBSE) · 84%</span>
+            </li>
+            <li>
+              <span class="edu__year">2019</span>
+              <strong>Mary Immaculate School, Murshidabad</strong>
+              <span>ICSE · 95.2%</span>
+            </li>
+          </ul>
+          <span class="card__label">Honors</span>
+          <ul class="honors">
+            <li><b>GATE DA 2026</b> — All India Rank 768</li>
+            <li><b>IAS-SRFP Fellow 2024</b> — 10% selection rate</li>
+            <li><b>Belden InnovateX 1.0</b> — National finalist, top 5 teams</li>
+            <li><b>JEE Advanced 2022</b> — Top 1 percentile</li>
+            <li><b>Databricks</b> — Generative AI Associate certified</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= INTERESTS ================= -->
+    <section class="section" id="interests">
+      <div class="section__head">
+        <span class="section__no" data-reveal>02 / Research interests</span>
+        <h2 class="section__title" data-split>What I think about.</h2>
+      </div>
+
+      <div class="bento" data-stagger>
+        <article class="tile tile--dark tile--wide" data-reveal data-tilt>
+          <span class="tile__no">A</span>
+          <h3>Brain–computer interfaces</h3>
+          <p>Non-invasive EEG decoding that works with minimal per-subject calibration — so a BCI can be put on and used, not trained for an hour first.</p>
+          <svg class="tile__wave" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q 12 5 25 30 T 50 30 T 75 30 Q 87 -10 100 30 T 125 30 T 150 30 Q 162 55 175 30 T 200 30 Q 212 0 225 30 T 250 30 T 275 30 Q 287 58 300 30 T 325 30 T 350 30 Q 362 8 375 30 T 400 30"/></svg>
+        </article>
+        <article class="tile" data-reveal data-tilt>
+          <span class="tile__no">B</span>
+          <h3>Myoelectric decoding</h3>
+          <p>Continuous, simultaneous multi-finger kinematics from surface EMG, aimed at prosthetic control.</p>
+        </article>
+        <article class="tile" data-reveal data-tilt>
+          <span class="tile__no">C</span>
+          <h3>Domain adaptation</h3>
+          <p>Closing the gap between subjects, sessions and electrode placements in non-stationary biosignals.</p>
+        </article>
+        <article class="tile tile--accent" data-reveal data-tilt>
+          <span class="tile__no">D</span>
+          <h3>Drift-aware models</h3>
+          <p>Decoders that monitor themselves and flag fatigue, electrode shift or a new user before errors compound.</p>
+        </article>
+        <article class="tile" data-reveal data-tilt>
+          <span class="tile__no">E</span>
+          <h3>AI agents</h3>
+          <p>Agentic systems that plan, call tools and supervise other agents — and self-monitoring agents that keep models honest.</p>
+        </article>
+        <article class="tile" data-reveal data-tilt>
+          <span class="tile__no">F</span>
+          <h3>Non-linear dynamics</h3>
+          <p>Entropy, Lyapunov exponents and dynamic mode decomposition as features for physiological time-series.</p>
+        </article>
+        <article class="tile" data-reveal data-tilt>
+          <span class="tile__no">G</span>
+          <h3>Robotics &amp; biomechanics</h3>
+          <p>Learned inverse kinematics, gait forecasting and physics-informed networks that link decoding to motion.</p>
+        </article>
+        <article class="tile tile--dark" data-reveal data-tilt>
+          <span class="tile__no">H</span>
+          <h3>AI for healthcare</h3>
+          <p>Models that read physiological signals early and reliably enough to matter clinically — from sepsis detection to rehabilitation.</p>
+        </article>
+      </div>
+
+      <div class="skills" data-reveal>
+        <span class="card__label">Toolbox</span>
+        <div class="skills__list">
+          <span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span><span>Transformers</span><span>CNNs</span><span>GRU / LSTM</span><span>PINNs</span><span>Python</span><span>C / C++</span><span>MATLAB</span><span>SQL</span><span>Databricks</span><span>Azure Data Lake</span><span>NumPy · SciPy · Pandas</span><span>Git</span><span>Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PUBLICATIONS ================= -->
+    <section class="section" id="publications">
+      <div class="section__head">
+        <span class="section__no" data-reveal>03 / Publications</span>
+        <h2 class="section__title" data-split>Published work.</h2>
+      </div>
+
+      <!-- TODO: paper 01 still points to Google Scholar; swap in its DOI once available -->
+      <ol class="pubs">
+        <li class="pub" data-reveal>
+          <span class="pub__no">01</span>
+          <div class="pub__body">
+            <div class="pub__meta">
+              <span class="badge badge--ok">Accepted</span>
+              <span>Book chapter · Springer Nature</span>
+            </div>
+            <h3>DAConformer: Low-Calibration EEG Decoding via Domain Adaptive CNN-Transformer for Sustainable Brain–Computer Interfaces</h3>
+            <p class="pub__authors"><b>Sukrit Ghosh*</b>, Yashkrit Singh, Prabhmeet Kaur, Jyotindra Narayan, Hassène Gritli</p>
+            <p class="pub__note">BCI and Sustainability volume. I designed the domain adaptation framework and ran the cross-subject evaluation.</p>
+          </div>
+          <a class="pub__link" href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=smggltIAAAAJ" target="_blank" rel="noopener" aria-label="Open on Google Scholar">↗</a>
+        </li>
+
+        <li class="pub" data-reveal>
+          <span class="pub__no">02</span>
+          <div class="pub__body">
+            <div class="pub__meta">
+              <span class="badge badge--live">Published</span>
+              <span>Conference · CoDIT 2026 · IEEE Xplore</span>
+            </div>
+            <h3>A Deep Spatio-Temporal Model for Decoding Simultaneous and Continuous Hand Movements from Surface Electromyography</h3>
+            <p class="pub__authors"><b>Sukrit Ghosh*</b>, Yashkrit Singh, Krishan K Sah, Garima Bhandari, Jyotindra Narayan</p>
+            <p class="pub__note">International Conference on Control, Decision and Information Technologies. Model architecture, experiments and evaluation.</p>
+          </div>
+          <a class="pub__link" href="https://ieeexplore.ieee.org/abstract/document/11631209" target="_blank" rel="noopener" aria-label="Read on IEEE Xplore">↗</a>
+        </li>
+
+        <li class="pub" data-reveal>
+          <span class="pub__no">03</span>
+          <div class="pub__body">
+            <div class="pub__meta">
+              <span class="badge badge--live">Published</span>
+              <span>Conference · ICSL DSGA, Kuala Lumpur · IEEE Xplore</span>
+            </div>
+            <h3>Gait-Phase-Aware Dual-Branch Stacked GRU Network for Underwater Knee Kinematics Forecasting: A Cross-Subject Evaluation</h3>
+            <p class="pub__authors">Prabhmeet Kaur, Yashkrit Singh, <b>Sukrit Ghosh</b>, Jyotindra Narayan, Hassène Gritli</p>
+            <p class="pub__note">Physics-informed modeling support and cross-subject evaluation.</p>
+          </div>
+          <a class="pub__link" href="https://ieeexplore.ieee.org/abstract/document/11736525" target="_blank" rel="noopener" aria-label="Read on IEEE Xplore">↗</a>
+        </li>
+      </ol>
+      <p class="footnote" data-reveal>* First / co-first author.</p>
+    </section>
+
+    <!-- ================= PIPELINE ================= -->
+    <section class="section section--dark" id="pipeline">
+      <div class="section__head">
+        <span class="section__no" data-reveal>04 / Work in progress</span>
+        <h2 class="section__title" data-split>In the pipeline.</h2>
+      </div>
+
+      <div class="pipe" data-stagger>
+        <article class="pipe__card" data-reveal data-step="4">
+          <div class="pipe__top">
+            <span class="badge badge--line">Under review</span>
+            <span class="pipe__venue">IOP Biomedical Physics &amp; Engineering Express</span>
+          </div>
+          <h3>Bridging Local Muscle Dynamics and Global Temporal Intent: A CNN–Transformer Framework for Continuous Multi-Finger Kinematic Decoding from sEMG</h3>
+          <p>Yashkrit Singh, <b>Sukrit Ghosh</b>, Jyotindra Narayan, Hassène Gritli. I built the CNN–Transformer architecture and the NinaPro DB1 pipeline, and validated reproducibility.</p>
+          <ol class="steps"><li>Idea</li><li>Experiments</li><li>Writing</li><li>Review</li><li>Published</li></ol>
+        </article>
+
+        <article class="pipe__card" data-reveal data-step="3">
+          <div class="pipe__top">
+            <span class="badge badge--line">Manuscript in preparation</span>
+            <span class="pipe__venue">Target: IEEE JBHI</span>
+          </div>
+          <h3>A drift-aware sEMG decoder with a self-monitoring agent</h3>
+          <p>Dynamic mode decomposition features feed an Inception-Transformer, paired with an agent that detects drift from fatigue, electrode shift or a new user and flags when predictions need adaptation. Evaluated with controlled drift injection on NinaPro DB1.</p>
+          <ol class="steps"><li>Idea</li><li>Experiments</li><li>Writing</li><li>Review</li><li>Published</li></ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="section" id="experience">
+      <div class="section__head">
+        <span class="section__no" data-reveal>05 / Experience</span>
+        <h2 class="section__title" data-split>Where I've worked.</h2>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline__line"><span id="timelineFill"></span></div>
+
+        <article class="job" data-reveal>
+          <span class="job__dot"></span>
+          <div class="job__when">Jun 2026 — Present<em>Industry</em></div>
+          <div class="job__body">
+            <h3>Associate Data Engineer <span>· Tredence Inc.</span></h3>
+            <p class="job__where">Chennai, India</p>
+            <ul>
+              <li>Build Supervisor Genie agents on Databricks — multi-agent systems in which a supervisor routes natural-language questions to specialised Genie agents over enterprise data.</li>
+              <li>Design the data pipelines behind them: Medallion (Bronze–Silver–Gold) architecture on Databricks, with ingestion and storage across Azure Data Lake Storage and Supabase.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job" data-reveal>
+          <span class="job__dot"></span>
+          <div class="job__when">Dec 2025 — Jun 2026<em>Research</em></div>
+          <div class="job__body">
+            <h3>Undergraduate Researcher <span>· SHRI Lab, IIT Patna</span></h3>
+            <p class="job__where">Smart Healthcare &amp; Robotics Interfacing Laboratory · Advisor: Dr. Jyotindra Narayan</p>
+            <ul>
+              <li>Designed DAConformer, a domain-adaptation architecture for EEG decoders that generalize across subjects with minimal calibration.</li>
+              <li>Built hybrid CNN–Transformer models for continuous multi-finger kinematic regression from sEMG on NinaPro DB1.</li>
+              <li>Developing a drift-aware sEMG decoder with a self-monitoring agent (manuscript in preparation).</li>
+              <li>Contributed physics-informed modeling to a gait-phase-aware recurrent network for lower-limb kinematics forecasting.</li>
+              <li>Worked on neural-network inverse kinematics for robotic manipulators.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job" data-reveal>
+          <span class="job__dot"></span>
+          <div class="job__when">Feb 2025 — Apr 2025<em>Industry</em></div>
+          <div class="job__body">
+            <h3>Backend Developer Intern <span>· Aselea Network</span></h3>
+            <p class="job__where">Jaipur, India · Remote</p>
+            <ul>
+              <li>Designed and deployed a full-stack AI chatbot (React, FastAPI, Flask) with custom AI models, lifting user engagement by 40%.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job" data-reveal>
+          <span class="job__dot"></span>
+          <div class="job__when">May 2024 — Jun 2024<em>Research</em></div>
+          <div class="job__body">
+            <h3>Summer Research Fellow (SRFP'24) <span>· IIT Kanpur</span></h3>
+            <p class="job__where">Indian Academy of Sciences fellowship · Advisor: Prof. Arun K. Saha</p>
+            <ul>
+              <li>Selected as an IAS Summer Research Fellow (top 10% of applicants nationally).</li>
+              <li>Engineered a high-resolution 3D computational model (1M+ nodes) with custom C-based UDFs in ANSYS Fluent.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Projects -->
+      <div class="projects">
+        <span class="card__label" data-reveal>Completed projects</span>
+        <div class="projects__grid" data-stagger>
+          <a class="project" data-reveal data-tilt href="https://github.com/Sukrit27/Early-Detection-of-sepsis-using-Deep-Learning" target="_blank" rel="noopener">
+            <span class="project__kind">Deep learning · Code ↗</span>
+            <h3>Early sepsis detection via non-linear dynamics</h3>
+            <p>A predictive framework on EEG signals (Kaggle HMS dataset) that quantifies physiological dynamics with entropy and Lyapunov exponents. Advised by Dr. Somnath Sarangi.</p>
+          </a>
+          <a class="project" data-reveal data-tilt href="https://drive.google.com/file/d/1A8Djl_eojzE5WymCLn0Wlp8GZy_6oDHy/view?usp=sharing" target="_blank" rel="noopener">
+            <span class="project__kind">B.Tech thesis · Read ↗</span>
+            <h3>Automatic MR fluid disc braking system</h3>
+            <p>A SolidWorks-modeled disc brake using magneto-rheological fluid and custom electromagnetic coils for dynamic torque control, with Arduino-based actuation. Advised by Dr. Chiranjit Sarkar.</p>
+          </a>
+          <!-- TODO: turn this into a link once the project URL is available -->
+          <div class="project" data-reveal data-tilt>
+            <span class="project__kind">Robotics · Deep learning</span>
+            <h3>Deep learning for 6-DOF PUMA 560 inverse kinematics</h3>
+            <p>A neural network over quaternion coordinates that solves inverse kinematics while detecting three types of singularity, for smoother motion control. Advised by Dr. Jyotindra Narayan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BLOG ================= -->
+    <section class="section section--soft" id="blog">
+      <div class="section__head">
+        <span class="section__no" data-reveal>06 / Blog</span>
+        <h2 class="section__title" data-split>Notes &amp; writing.</h2>
+      </div>
+
+      <!-- PLACEHOLDER POSTS: replace titles, blurbs and hrefs with real posts -->
+      <div class="blog" data-stagger>
+        <a class="post" href="#blog" data-reveal>
+          <div class="post__top"><span class="badge">Coming soon</span><span>Explainer</span></div>
+          <h3>Why EEG decoders break on new people — and what domain adaptation fixes</h3>
+          <p>A plain-language tour of inter-subject variability and the ideas behind DAConformer.</p>
+          <span class="post__more">Read <i>→</i></span>
+        </a>
+        <a class="post" href="#blog" data-reveal>
+          <div class="post__top"><span class="badge">Coming soon</span><span>Field notes</span></div>
+          <h3>Working with NinaPro DB1: a practical pipeline for sEMG regression</h3>
+          <p>Windowing, normalization and the evaluation mistakes worth avoiding.</p>
+          <span class="post__more">Read <i>→</i></span>
+        </a>
+        <a class="post" href="#blog" data-reveal>
+          <div class="post__top"><span class="badge">Coming soon</span><span>Essay</span></div>
+          <h3>From mechanical engineering to neural interfaces</h3>
+          <p>What carried over, what didn't, and how I'd make the switch again.</p>
+          <span class="post__more">Read <i>→</i></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section section--dark contact" id="contact">
+      <div class="section__head">
+        <span class="section__no" data-reveal>07 / Contact</span>
+        <h2 class="contact__title" data-split>Let's build something that listens.</h2>
+      </div>
+
+      <div class="contact__grid">
+        <div data-reveal>
+          <p class="contact__lead">Open to research collaborations, graduate opportunities and conversations about neural interfaces.</p>
+          <a class="contact__mail" href="mailto:sukritghosh03@gmail.com">sukritghosh03@gmail.com</a>
+          <button class="copy" id="copyMail" type="button">Copy email</button>
+          <ul class="contact__socials">
+            <li><a href="https://www.linkedin.com/in/sukrit-ghosh273/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a></li>
+            <li><a href="https://github.com/Sukrit27" target="_blank" rel="noopener">GitHub <span>↗</span></a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=smggltIAAAAJ" target="_blank" rel="noopener">Google Scholar <span>↗</span></a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="contactForm" data-reveal="right">
+          <label>Your name
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>Subject
+            <input type="text" name="subject" required />
+          </label>
+          <label>Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn btn--accent" type="submit" data-magnetic>Send message <span class="arrow">→</span></button>
+          <p class="form__hint">Opens your email app with the message filled in.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Sukrit Ghosh</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
